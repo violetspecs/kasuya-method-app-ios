@@ -110,13 +110,16 @@ struct TimerView: View {
                 .font(.title.bold())
             Text("Total water used: \(Int(plan.totalWater.rounded()))g")
                 .foregroundColor(.secondary)
-            Button("Done") { presentationMode.wrappedValue.dismiss() }
-                .font(.headline)
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.accentColor)
-                .foregroundColor(.white)
-                .cornerRadius(12)
+            Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                Text("Done")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.accentColor)
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
+                    .contentShape(Rectangle())
+            }
         }
     }
 
